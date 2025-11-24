@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: wagtail-app
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn wagtail-test.wsgi:application"
+    plan: free
+    branch: main
+    autoDeploy: true
